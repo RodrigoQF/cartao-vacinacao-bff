@@ -17,3 +17,4 @@ public record Vacina
 }
 
 public record CadastroClienteReq(string cpf, int idade, string sexo, string nome);
+public record LoginReq(string cpf);
