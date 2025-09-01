@@ -18,3 +18,6 @@ public record Vacina
 
 public record CadastroClienteReq(string cpf, int idade, string sexo, string nome);
 public record LoginReq(string cpf);
+public record AdicionarVacinaReq(string cpf, string nome, string data, string dose, string fabricante);
+public record AtualizarVacinaReq(string cpf, string id, string nome, string data, string dose, string fabricante);
+public record DeletarVacinaReq(string cpf, string id);
