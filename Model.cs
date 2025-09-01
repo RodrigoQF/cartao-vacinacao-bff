@@ -15,3 +15,5 @@ public record Vacina
     public string Dose { get; set; } = default!;
     public string Fabricante { get; set; } = default!;
 }
+
+public record CadastroClienteReq(string cpf, int idade, string sexo, string nome);
