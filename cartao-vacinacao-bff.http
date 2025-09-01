@@ -1,0 +1,6 @@
+@cartao_vacinacao_bff_HostAddress = http://localhost:5095
+
+GET {{cartao_vacinacao_bff_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
