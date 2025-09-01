@@ -1,3 +1,5 @@
+// Models.cs
+
 public record Pessoa
 {
     public string Id { get; init; } = default!;
@@ -11,13 +13,14 @@ public record Vacina
 {
     public string Id { get; init; } = default!;
     public string Nome { get; set; } = default!;
-    public string Data { get; set; } = default!;   
+    // Mantido como string para casar com "YYYY-MM-DD" do front
+    public string Data { get; set; } = default!;
     public string Dose { get; set; } = default!;
     public string Fabricante { get; set; } = default!;
 }
 
-public record CadastroClienteReq(string cpf, int idade, string sexo, string nome);
-public record LoginReq(string cpf);
-public record AdicionarVacinaReq(string cpf, string nome, string data, string dose, string fabricante);
-public record AtualizarVacinaReq(string cpf, string id, string nome, string data, string dose, string fabricante);
-public record DeletarVacinaReq(string cpf, string id);
+//Resposta que o FRONT espera nas requisicoes
+public record CartaoVacinacaoResponse(PessoaDto pessoa, List<VacinaDto> vacinas);
+
+public record PessoaDto(string id, string cpf, string nome, int idade, string sexo);
+public record VacinaDto(string id, string nome, string data, string dose, string fabricante);
